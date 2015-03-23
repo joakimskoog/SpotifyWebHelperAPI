@@ -6,7 +6,7 @@ namespace SpotifyWebHelperAPI.Models
     public class StatusDto
     {
         [DataMember(Name = "error")]
-        public ErrorDto ErrorDto { get; set; }
+        public ErrorDto Error { get; set; }
 
         [DataMember(Name = "version")]
         public int Version { get; set; }
@@ -30,7 +30,7 @@ namespace SpotifyWebHelperAPI.Models
         public bool PrevEnabled { get; set; }
 
         [DataMember(Name = "track")]
-        public TrackDto TrackDto { get; set; }
+        public TrackDto Track { get; set; }
 
         [DataMember(Name = "playing_position")]
         public double PlayingPosition { get; set; }

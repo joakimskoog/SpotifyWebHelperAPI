@@ -6,7 +6,7 @@ namespace SpotifyWebHelperAPI.Models
     public class ClientVersionDto
     {
         [DataMember(Name = "error")]
-        public ErrorDto ErrorDto { get; set; }
+        public ErrorDto Error { get; set; }
 
         [DataMember(Name = "version")]
         public int Version { get; set; }

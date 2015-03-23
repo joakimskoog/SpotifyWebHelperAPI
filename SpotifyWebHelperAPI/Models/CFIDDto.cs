@@ -6,7 +6,7 @@ namespace SpotifyWebHelperAPI.Models
     public class CFIDDto
     {
         [DataMember(Name = "error")]
-        public ErrorDto ErrorDto { get; set; }
+        public ErrorDto Error { get; set; }
 
         [DataMember(Name = "token")]
         public string Token { get; set; }
