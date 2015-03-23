@@ -44,6 +44,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ISpotifyWebHelperCommunicationService.cs" />
     <Compile Include="Models\CFIDDto.cs" />
     <Compile Include="Models\ClientVersionDto.cs" />
     <Compile Include="Models\ErrorDto.cs" />
