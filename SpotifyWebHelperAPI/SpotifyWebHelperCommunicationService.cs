@@ -1,6 +1,7 @@
 ﻿using System;
 using Newtonsoft.Json;
 using SpotifyWebHelperAPI.Models;
+using SpotifyWebHelperAPI.Serialization;
 using SpotifyWebHelperAPI.Web;
 
 namespace SpotifyWebHelperAPI
@@ -25,20 +26,20 @@ namespace SpotifyWebHelperAPI
         private readonly IWebClient _webClient;
         private readonly IUnixTimeStampConverter _timeStampConverter;
         private readonly IAuthProvider _authProvider;
-        private readonly ICFIDProvider _cfidProvider;
+        private readonly IDeserializer _deserializer;
 
         #endregion
 
-        public SpotifyWebHelperCommunicationService(IWebClient webClient, IUnixTimeStampConverter timeStampConverter, IAuthProvider authProvider, ICFIDProvider cfidProvider)
+        public SpotifyWebHelperCommunicationService(IWebClient webClient, IUnixTimeStampConverter timeStampConverter, IAuthProvider authProvider, IDeserializer deserializer)
         {
             if (webClient == null) throw new ArgumentNullException("webClient");
             if (timeStampConverter == null) throw new ArgumentNullException("timeStampConverter");
             if (authProvider == null) throw new ArgumentNullException("authProvider");
-            if (cfidProvider == null) throw new ArgumentNullException("cfidProvider");
+            if (deserializer == null) throw new ArgumentNullException("deserializer");
             _webClient = webClient;
             _timeStampConverter = timeStampConverter;
             _authProvider = authProvider;
-            _cfidProvider = cfidProvider;
+            _deserializer = deserializer;
         }
 
         public StatusDto GetStatus()
@@ -69,13 +70,13 @@ namespace SpotifyWebHelperAPI
         private T Send<T>(string request)
         {
             var auth = _authProvider.GetAuth();
-            var cfid = _cfidProvider.GetCFID();
+            var cfid = _authProvider.GetCFID();
             var unixTimeStamp = _timeStampConverter.ConvertToTimeStamp(DateTime.UtcNow);
             var address = string.Format("http://{0}:{1}/{2}&ref=&cors=&_={3}&oauth={4}&csrf={5}", Host, Port, request, unixTimeStamp, auth, cfid);
 
             var response = _webClient.DownloadString(address);
 
-            return JsonConvert.DeserializeObject<T>(response);
+            return _deserializer.DeserializeObject<T>(response);
         }
     }
 }

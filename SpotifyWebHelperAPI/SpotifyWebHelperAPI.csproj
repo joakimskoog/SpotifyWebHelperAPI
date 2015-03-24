@@ -46,9 +46,10 @@
   <ItemGroup>
     <Compile Include="CurrentDateToUnixTimeStampConverter.cs" />
     <Compile Include="IAuthProvider.cs" />
-    <Compile Include="ICFIDProvider.cs" />
+    <Compile Include="Serialization\IDeserializer.cs" />
     <Compile Include="ISpotifyWebHelperCommunicationService.cs" />
     <Compile Include="IUnixTimeStampConverter.cs" />
+    <Compile Include="Serialization\JsonDeserializer.cs" />
     <Compile Include="Web\IWebClient.cs" />
     <Compile Include="Models\CFIDDto.cs" />
     <Compile Include="Models\ClientVersionDto.cs" />

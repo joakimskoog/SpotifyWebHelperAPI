@@ -3,5 +3,7 @@
     public interface IAuthProvider
     {
         string GetAuth();
+
+        string GetCFID();
     }
 }
