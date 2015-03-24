@@ -44,7 +44,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CurrentDateToUnixTimeStampConverter.cs" />
+    <Compile Include="IAuthProvider.cs" />
+    <Compile Include="ICFIDProvider.cs" />
     <Compile Include="ISpotifyWebHelperCommunicationService.cs" />
+    <Compile Include="IUnixTimeStampConverter.cs" />
+    <Compile Include="Web\IWebClient.cs" />
     <Compile Include="Models\CFIDDto.cs" />
     <Compile Include="Models\ClientVersionDto.cs" />
     <Compile Include="Models\ErrorDto.cs" />
@@ -54,6 +59,8 @@
     <Compile Include="Models\StatusDto.cs" />
     <Compile Include="Models\TrackDto.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SpotifyWebHelperCommunicationService.cs" />
+    <Compile Include="Web\WebClient.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
