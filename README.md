@@ -10,7 +10,22 @@ that runs locally on user's machines and is used for various things such as the 
 * Retrieve information about the Spotify client
 
 ## Usage
-Coming soon...
+There are a few different ways you can start using the communication service. The first one is the easy way where you use the default dependencies. This is shown below.
+```C# 
+  var communicationService = SpotifyWebHelperApi.Create();
+  var status = communicationService.GetStatus();
+
+  //Do stuff with the status
+
+  //Pause the currently playing song
+  var newStatus = communicationService.Pause(); 
+```
+
+There is also a way to create SpotifyCommunicationService by supplying your own dependencies to it. The constructor is shown below.
+
+```C#
+public SpotifyWebHelperCommunicationService(IWebClient webClient, IUnixTimeStampConverter timeStampConverter, IAuthProvider authProvider, IDeserializer deserializer)
+```
 
 ## Contributing
 Do you have a new feature? Maybe an API method that is not currently implemented? Here's what to do (in the following order)
