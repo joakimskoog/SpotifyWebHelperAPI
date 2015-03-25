@@ -21,7 +21,7 @@ namespace SpotifyWebHelperAPI.Web
 
         public string DownloadString(Uri address)
         {
-            string result = string.Empty;
+            string result;
 
             using (var client = new System.Net.WebClient { Headers = _headers })
             {

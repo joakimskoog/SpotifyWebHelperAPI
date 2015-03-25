@@ -50,6 +50,8 @@
     <Compile Include="ISpotifyWebHelperCommunicationService.cs" />
     <Compile Include="IUnixTimeStampConverter.cs" />
     <Compile Include="Serialization\JsonDeserializer.cs" />
+    <Compile Include="SpotifyEmbededAuthProvider.cs" />
+    <Compile Include="SpotifyWebHelperApi.cs" />
     <Compile Include="Web\IWebClient.cs" />
     <Compile Include="Models\CFIDDto.cs" />
     <Compile Include="Models\ClientVersionDto.cs" />

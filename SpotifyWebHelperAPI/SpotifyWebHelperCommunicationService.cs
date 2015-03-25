@@ -1,5 +1,4 @@
 ﻿using System;
-using Newtonsoft.Json;
 using SpotifyWebHelperAPI.Models;
 using SpotifyWebHelperAPI.Serialization;
 using SpotifyWebHelperAPI.Web;
