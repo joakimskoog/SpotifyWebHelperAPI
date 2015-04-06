@@ -1,9 +1,11 @@
-﻿namespace SpotifyWebHelperAPI
+﻿using SpotifyWebHelperAPI.Models;
+
+namespace SpotifyWebHelperAPI
 {
     public interface IAuthProvider
     {
         string GetAuth();
 
-        string GetCFID();
+        CFIDDto GetCFID();
     }
 }
