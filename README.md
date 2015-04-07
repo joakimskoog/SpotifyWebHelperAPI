@@ -24,7 +24,7 @@ There are a few different ways you can start using the communication service. Th
 There is also a way to create SpotifyCommunicationService by supplying your own dependencies to it. The constructor is shown below.
 
 ```C#
-public SpotifyWebHelperCommunicationService(IWebClient webClient, IUnixTimeStampConverter timeStampConverter, IAuthProvider authProvider, IDeserializer deserializer)
+public SpotifyWebHelperCommunicationService(IRequestService requestService, IDeserializer deserializer, string auth, string cfid)
 ```
 
 ## Contributing
