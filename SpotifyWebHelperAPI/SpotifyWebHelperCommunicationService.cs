@@ -21,6 +21,11 @@ namespace SpotifyWebHelperAPI
 
         private readonly IRequestService _requestService;
         private readonly IDeserializer _deserializer;
+
+        #endregion
+
+        #region Tokens
+
         private readonly string _auth;
         private readonly string _cfid;
 

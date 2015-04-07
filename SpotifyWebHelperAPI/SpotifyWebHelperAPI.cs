@@ -16,10 +16,7 @@ namespace SpotifyWebHelperAPI
                 {
                     {"Origin", "https://embed.spotify.com"},
                     {"Referer", "https://embed.spotify.com/?uri=spotify:track:7skutlFh5m9qOpfgZMSenH"},
-                    {
-                        HttpRequestHeader.UserAgent,
-                        @"Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/535.2 (KHTML, like Gecko) Chrome/15.0.874.121 Safari/535.2"
-                    }
+                    {HttpRequestHeader.UserAgent, @"Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/535.2 (KHTML, like Gecko) Chrome/15.0.874.121 Safari/535.2"}
                 };
 
                 var requestService = new RequestService(headers, "127.0.0.1", 4380, new UnixTimeStampConverter());
