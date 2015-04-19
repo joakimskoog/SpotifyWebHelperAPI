@@ -10,7 +10,8 @@ that runs locally on user's machines and is used for various things such as the 
 * Retrieve information about the Spotify client
 
 ## Usage
-There are a few different ways you can start using the communication service. The first one is the easy way where you use the default dependencies. This is shown below.
+There are a few different ways you can start using the communication service. Before you start using the code you will have to either download it from Github or from NuGet (https://www.nuget.org/packages/SpotifyWebHelperAPI/). An example on how to use the library is shown below:
+
 ```C# 
   var communicationService = SpotifyWebHelperApi.Create();
   var status = communicationService.GetStatus();
