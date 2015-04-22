@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Net;
+using System.Text;
 
 namespace SpotifyWebHelperAPI.Web
 {
@@ -54,7 +55,7 @@ namespace SpotifyWebHelperAPI.Web
 
         private string GetResponse(string request)
         {
-            using (var client = new WebClient { Headers = _headers })
+            using (var client = new WebClient { Headers = _headers, Encoding = Encoding.UTF8})
             {
                 return client.DownloadString(request);
             }
